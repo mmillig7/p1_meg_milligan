@@ -1,0 +1,30 @@
+body {
+	background-color: lightpink;
+background-image: url("_.jpeg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+body{
+font-family: didot;
+	font-size: 100px;
+	color: lightpink;
+}
+.main-box1 {
+	padding: 50px;
+	display: fixed;
+	color: greenyellow;
+	background-color: white;
+	width: 1920px;
+	height:200px;
+	text-align: center;
+}
+.main-box2 {
+	padding: 10px;
+	color: antiquewhite;
+	background-color: lightpink;
+	width: 1500px;
+	height: 200px;
+	display: inline-block;
+}
