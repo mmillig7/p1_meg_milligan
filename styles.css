@@ -1,12 +1,7 @@
 body {
 	background-color: lightpink;
-background-image: url("_.jpeg");
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
 }
-body{
+body {
 font-family: didot;
 	font-size: 100px;
 	color: lightpink;
@@ -27,4 +22,14 @@ font-family: didot;
 	width: 1500px;
 	height: 200px;
 	display: inline-block;
+}
+.main-box3 {
+	width: 300px;
+	height: 300px;
+	display: absolute;
+	float: center;
+}
+.dogimage {
+	width: 200px;
+	height: 200px;
 }

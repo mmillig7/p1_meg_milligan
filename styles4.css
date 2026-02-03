@@ -1,0 +1,34 @@
+body {
+font-size: 100px;
+font-family: didot;
+font-stretch: 100px;
+}
+.intro {
+	display: fixed;
+	color: mediumpurple;
+	height: 400px;
+	width: 100vw;
+	background-color: lightcoral;
+	margin-top: 0px;
+}
+.body1 {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 600px;
+}
+.ndlptpillow {
+	image-width: 400px;
+	image-height: 200px;
+	border: 50px;
+	border-color: deeppink;
+}
+.body2 {
+	font-size: 50px;
+	color: lightblue;
+}
+.body3 {
+font-size: 100px;
+color: lightyellow;
+padding: 100px;
+}
