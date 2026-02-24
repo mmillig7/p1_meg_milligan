@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles7.css">
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><b>Lamp</b></title>
+<body>
+<div id="cursor-glow" aria-hidden="true"></div>
+<svg width="0" height="0" aria-hidden="true">
+  <defs>
+    <clipPath id="scallop-frame" clipPathUnits="userSpaceOnUse">
+      <!-- 640x740 frame: scalloped top and bottom edges -->
+      <path d="M 0,40 Q 40,0 80,40 Q 120,0 160,40 Q 200,0 240,40 Q 280,0 320,40 Q 360,0 400,40 Q 440,0 480,40 Q 520,0 560,40 Q 600,0 640,40
+        L 640,700 Q 600,740 560,700 Q 520,740 480,700 Q 440,740 400,700 Q 360,740 320,700 Q 280,740 240,700 Q 200,740 160,700 Q 120,740 80,700 Q 40,740 0,700
+        L 0,40 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+<nav class="page-arrows">
+  <a href="sixth page.html" class="page-arrow page-arrow-prev" aria-label="Previous page"><span class="heart-bg" aria-hidden="true">♥</span><span class="arrow-icon">←</span></a>
+  <a href="eighthpage.html" class="page-arrow page-arrow-next" aria-label="Next page"><span class="heart-bg" aria-hidden="true">♥</span><span class="arrow-icon">→</span></a>
+</nav>
+<div class="container">
+  <div class="img"><img id="lampoff" src="lampoff.png"><img id="lampon" src="lampon.png"></div>
+</div>
+<div class="bottom-text-box">
+  <p>Waking up in the morning and turning my lamps on makes me have a good day.</p>
+</div>
+<script>
+(function() {
+  var glow = document.getElementById('cursor-glow');
+  if (!glow) return;
+  function moveGlow(e) {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  }
+  function hideGlow() {
+    glow.style.opacity = '0';
+  }
+  function showGlow() {
+    glow.style.opacity = '1';
+  }
+  document.addEventListener('mousemove', moveGlow);
+  document.addEventListener('mouseleave', hideGlow);
+  document.addEventListener('mouseenter', showGlow);
+})();
+</script>
+</body>
+</html>

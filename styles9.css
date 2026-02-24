@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: lightpink;
+}
+
+.center-text-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20vw;
+  max-width: 20vw;
+  font-family: 'Agbalumo', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 50;
+  pointer-events: none;
+}
+.center-text-box p {
+  margin: 0;
+  color: darkred;
+}
+
+.circles-wrap {
+  position: fixed;
+  inset: 0;
+  touch-action: none;
+}
+
+.heart {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: lightpink;
+  font-size: 1em;
+  line-height: 1;
+  filter: blur(12px);
+  will-change: transform;
+  pointer-events: auto;
+  animation: heart-pulse 4s ease-in-out infinite;
+}
+.heart-magenta {
+  color: darkred;
+}
+@keyframes heart-pulse {
+  0%, 100% { opacity: 0.65; filter: blur(12px) brightness(0.85); }
+  50% { opacity: 1; filter: blur(12px) brightness(1.15); }
+}
+
+.page-arrows {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+.page-arrow {
+  pointer-events: auto;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+.page-arrow:hover {
+  opacity: 1;
+}
+.page-arrow .heart-bg {
+  position: absolute;
+  color: white;
+  font-size: 56px;
+  line-height: 1;
+  z-index: 0;
+}
+.page-arrow .arrow-icon {
+  color: lightpink;
+  font-size: 22px;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+.page-arrow-prev {
+  left: 24px;
+}
+.page-arrow-next {
+  right: 24px;
+}

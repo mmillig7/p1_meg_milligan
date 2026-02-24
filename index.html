@@ -1,29 +1,85 @@
-This page consists of my home page, bulletin board with photo viewers can click on and take them to the different pages.
 <!DOCTYPE html>
 <html> 
   <head>
     <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-<div><p>There is always something running through my mind. Whether those things change daily or yearly, whether I realize it or not, they make up my thoughts, my life. </p></div>
-    
-<body>
-<div class="main-box1">
-  <p>The Things that Populate my Mind: Current</p>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+  </head>
+  <body>  
+<nav class="page-arrows">
+  <a href="second page.html" class="page-arrow page-arrow-next" aria-label="Next page"><span class="heart-bg" aria-hidden="true">♥</span><span class="arrow-icon">→</span></a>
+</nav>
+<div class="index-content">
+  <div class="top-text-box">
+    <p>Here you will find things that mean a lot to me in my life. I hope you can experience what goes through my head as you flip. Drag the photos on the bulletin board to arrange them.</p>
+  </div>
+  <div class="frame">
+  <div class="frame-img"><img id="frame" src="frame.png" alt=""></div>
+  <div class="pictures">
+    <div class="pic-wrap pic-1"><a href="../second/secondpage.html"><img id="dog" src="dog.jpeg" alt=""></a></div>
+    <div class="pic-wrap pic-2"><img id="lamp" src="lamp1.jpeg" alt=""></div>
+    <div class="pic-wrap pic-3"><img id="thread" src="thread.jpeg" alt=""></div>
+    <div class="pic-wrap pic-4"><a href="../fourth/fourth page.html"><img id="letter" src="letter.jpeg" alt=""></a></div>
+    <div class="pic-wrap pic-5"><img id="orchid" src="orchid.jpeg" alt=""></div>
+    <div class="pic-wrap pic-6"><img id="pattern" src="sparklepink.jpeg" alt=""></div>
+    <div class="pic-wrap pic-7"><img src="snoopy4.jpeg" alt=""></div>
+    <div class="pic-wrap pic-8"><img src="petals.webp" alt=""></div>
+    <div class="pic-wrap pic-9"><img src="heart.jpeg" alt=""></div>
+  </div>
+  </div>
 </div>
+<script>
+(function () {
+  var wraps = document.querySelectorAll('.pic-wrap');
+  var dragging = null;
+  var startX, startY, startLeft, startTop;
 
-<div class="main-box2">
-</div>
+  function onMouseDown(e) {
+    if (e.button !== 0) return;
+    var wrap = e.currentTarget;
+    var r = wrap.getBoundingClientRect();
+    dragging = wrap;
+    wrap._dragged = false;
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = r.left;
+    startTop = r.top;
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+    e.preventDefault();
+  }
 
-<div class="main-box3">
-<p>The little things that keep me going at the moment, until I find a new hyperfixation.</p>
-</div>
+  function onMouseMove(e) {
+    if (!dragging) return;
+    dragging._dragged = true;
+    var dx = e.clientX - startX;
+    var dy = e.clientY - startY;
+    dragging.style.left = (startLeft + dx) + 'px';
+    dragging.style.top = (startTop + dy) + 'px';
+  }
 
-<div>
-<div class="frame"
-img href="homepage.jpg">
-</div>
+  function onMouseUp() {
+    if (dragging) {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    }
+    dragging = null;
+  }
 
+  wraps.forEach(function (wrap) {
+    wrap.addEventListener('mousedown', onMouseDown);
+  });
+
+  document.querySelectorAll('.pic-wrap a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var w = a.closest('.pic-wrap');
+      if (w && w._dragged) e.preventDefault();
+    });
+  });
+})();
+</script>
 </body>
 </html>

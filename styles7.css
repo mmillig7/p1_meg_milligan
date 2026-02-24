@@ -1,0 +1,80 @@
+* {
+	margin: 0px;
+}
+body {
+	background-image: url('pattern.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+}
+#cursor-glow {
+	position: fixed;
+	width: 24px;
+	height: 24px;
+	margin-left: -12px;
+	margin-top: -12px;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(255, 255, 220, 0.9) 0%, rgba(255, 255, 200, 0.6) 50%, rgba(255, 255, 180, 0.2) 100%);
+	box-shadow: 0 0 12px 8px rgba(255, 255, 200, 0.6);
+	pointer-events: none;
+	z-index: 9999;
+	transition: opacity 0.15s ease;
+}
+.container {
+	width: 100vw;
+	height: 100vh;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.img {
+	position: relative;
+	border: 50px;
+	padding: 20px;
+	background: lightpink;
+}
+.img img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 700px;
+	object-fit: contain;
+	transition: opacity 0.3s ease;
+}
+#lampoff {
+	z-index: 2;
+	transform: translate(-50%, calc(-50% - 14px));
+}
+#lampon {
+	z-index: 1;
+}
+.img:hover #lampoff {
+	opacity: 0;
+}
+.page-arrows { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 100; }
+.page-arrow { pointer-events: auto; position: fixed; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; text-decoration: none; opacity: 0.9; transition: opacity 0.2s; }
+.page-arrow:hover { opacity: 1; }
+.page-arrow .heart-bg { position: absolute; color: white; font-size: 56px; line-height: 1; z-index: 0; }
+.page-arrow .arrow-icon { color: lightpink; font-size: 22px; font-weight: bold; position: relative; z-index: 2; }
+.page-arrow-prev { left: 24px; }
+.page-arrow-next { right: 24px; }
+
+.bottom-text-box {
+	position: fixed;
+	bottom: 70px;
+	left: 0;
+	right: 0;
+	font-family: 'Agbalumo', sans-serif;
+	font-size: 25px;
+	color: seagreen;
+	text-align: center;
+	padding: 0 20px;
+	z-index: 10;
+}
+.bottom-text-box p {
+	margin: 0;
+}

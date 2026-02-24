@@ -1,0 +1,53 @@
+* {
+	margin:0px;
+}
+.container {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+body {
+	background-color: darkcyan;
+	background-image: url("jewel.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+	font-family: 'Agbalumo', sans-serif;
+}
+.image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	font-size: 80px;
+	color: darkcyan;
+	font-family: 'Agbalumo', sans-serif;
+	animation-name: fade;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+.image .text {
+	text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 16px rgba(255, 255, 255, 0.4);
+}
+@keyframes fade {
+from {
+	color: darkcyan;
+}
+to {
+	color: royalblue;
+}
+}
+
+.page-arrows { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 100; }
+.page-arrow { pointer-events: auto; position: fixed; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; text-decoration: none; opacity: 0.9; transition: opacity 0.2s; }
+.page-arrow:hover { opacity: 1; }
+.page-arrow .heart-bg { position: absolute; color: white; font-size: 56px; line-height: 1; z-index: 0; }
+.page-arrow .arrow-icon { color: lightpink; font-size: 22px; font-weight: bold; position: relative; z-index: 2; }
+.page-arrow-prev { left: 24px; }
+.page-arrow-next { right: 24px; }
+

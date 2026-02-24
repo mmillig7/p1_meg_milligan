@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#F5EEE0"/>
+  <defs>
+    <pattern id="hp" x="0" y="0" width="90" height="90" patternUnits="userSpaceOnUse">
+      <!-- Two hearts per tile to create the staggered diagonal look -->
+      <!-- Heart A at top-left of tile -->
+      <path d="M0-11 C2.5-18 15-18 15-8 C15 1 0 13 0 13 C0 13 -15 1 -15-8 C-15-18 -2.5-18 0-11Z" fill="#C42730" transform="translate(22,28)"/>
+      <!-- Heart B at bottom-right of tile (offset by half tile) -->
+      <path d="M0-11 C2.5-18 15-18 15-8 C15 1 0 13 0 13 C0 13 -15 1 -15-8 C-15-18 -2.5-18 0-11Z" fill="#C42730" transform="translate(67,73)"/>
+    </pattern>
+    <pattern id="hp2" x="45" y="45" width="90" height="90" patternUnits="userSpaceOnUse">
+      <path d="M0-11 C2.5-18 15-18 15-8 C15 1 0 13 0 13 C0 13 -15 1 -15-8 C-15-18 -2.5-18 0-11Z" fill="#C42730" transform="translate(22,28)"/>
+      <path d="M0-11 C2.5-18 15-18 15-8 C15 1 0 13 0 13 C0 13 -15 1 -15-8 C-15-18 -2.5-18 0-11Z" fill="#C42730" transform="translate(67,73)"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#hp)"/>
+  <rect width="1920" height="1080" fill="url(#hp2)"/>
+</svg>

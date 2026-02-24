@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progress</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles8.css">
+  </head>
+  <body>
+    <nav class="page-arrows">
+      <a href="seventh page.html" class="page-arrow page-arrow-prev" aria-label="Previous page"><span class="heart-bg" aria-hidden="true">♥</span><span class="arrow-icon">←</span></a>
+      <a href="ninthpage.html" class="page-arrow page-arrow-next" aria-label="Next page"><span class="heart-bg" aria-hidden="true">♥</span><span class="arrow-icon">→</span></a>
+    </nav>
+    <div class="container">
+      <div class="text-flex top-text">
+        <p>Needlepoint gives me an outlet for creativity.</p>
+      </div>
+      <div class="images-wrap">
+        <img class="img-finished" src="finished.png" alt="Finished" />
+        <img class="img-progress" id="img-progress" src="progress.png" alt="Progress" />
+      </div>
+      <div class="slider-wrap">
+        <label for="reveal-slider" class="slider-label">Drag to reveal finished piece</label>
+        <input type="range" id="reveal-slider" class="reveal-slider" min="0" max="100" value="0" aria-label="Reveal finished image" />
+      </div>
+      <div class="text-flex bottom-text">
+        <p>When searching for a quiet hobby that allows me to mindlessly stitch, I always turn to needlepoint. Stitching goes slow, but can take up many hours without notice.</p>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var slider = document.getElementById('reveal-slider');
+        var progressImg = document.getElementById('img-progress');
+        if (slider && progressImg) {
+          slider.addEventListener('input', function () {
+            var val = parseInt(slider.value, 10);
+            progressImg.style.opacity = 1 - val / 100;
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
